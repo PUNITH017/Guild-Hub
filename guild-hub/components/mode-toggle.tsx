@@ -10,7 +10,7 @@ export function ModeToggle() {
   const { setTheme, theme } = useTheme();
 
   const toggleTheme = () => {
-    console.log(theme); 
+    console.log(theme);
     setTheme(theme === "light" ? "dark" : "light");
   };
 
@@ -22,9 +22,9 @@ export function ModeToggle() {
       aria-label="Toggle theme"
     >
       {theme === "light" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-500" />
-      ) : (
         <Moon className="h-[1.2rem] w-[1.2rem] text-blue-500" />
+      ) : (
+        <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-500" />
       )}
     </Button>
   );
