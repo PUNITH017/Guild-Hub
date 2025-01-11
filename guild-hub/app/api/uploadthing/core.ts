@@ -1,13 +1,13 @@
-import { auth } from "@clerk/nextjs/server";
+// import { auth } from "@clerk/nextjs/server";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 
 const f = createUploadthing();
 
-const handleAuth = () => {
-  const { userId } = auth(); // Destructure userId
-  if (!userId) throw Error("Unauthorized");
-  return { userId };
-};
+// const handleAuth = () => {
+//   const { userId } = auth(); // Destructure userId
+//   if (!userId) throw Error("Unauthorized");
+//   return { userId };
+// };
 
 export const ourFileRouter = {
   serverImage: f({ image: { maxFileSize: "4MB", maxFileCount: 1 } })
