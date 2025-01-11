@@ -11,17 +11,17 @@ const handleAuth = () => {
 
 export const ourFileRouter = {
   serverImage: f({ image: { maxFileSize: "4MB", maxFileCount: 1 } })
-    .middleware(() => {
-      return handleAuth();
-    })
+    // .middleware(() => {
+    //   return handleAuth();
+    // })
     .onUploadComplete(({ metadata, file }) => {
       console.log("Server image uploaded:", { metadata, file });
     }),
 
   messageFile: f({ image: true, video: true, pdf: true })
-    .middleware(() => {
-      return handleAuth();
-    })
+    // .middleware(() => {
+    //   return handleAuth();
+    // })
     .onUploadComplete(({ metadata, file }) => {
       console.log("Message file uploaded:", { metadata, file });
     }),
