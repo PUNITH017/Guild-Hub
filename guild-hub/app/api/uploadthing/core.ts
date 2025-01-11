@@ -10,7 +10,9 @@ const f = createUploadthing();
 // };
 
 export const ourFileRouter = {
-  serverImage: f({ image: { maxFileSize: "4MB", maxFileCount: 1 } })
+  serverImage: f({ image: { maxFileSize: "4MB", maxFileCount: 1 } ,
+  
+  })
     // .middleware(() => {
     //   return handleAuth();
     // })
@@ -18,7 +20,10 @@ export const ourFileRouter = {
       console.log("Server image uploaded:", { metadata, file });
     }),
 
-  messageFile: f({ image: true, video: true, pdf: true })
+  messageFile: f({
+    image: { maxFileSize: "4MB", maxFileCount: 1 },
+    pdf: { maxFileSize: "4MB", maxFileCount: 1 },
+  })
     // .middleware(() => {
     //   return handleAuth();
     // })
